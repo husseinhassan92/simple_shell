@@ -8,5 +8,5 @@
 char **tokenize(char *line);
 char **tokenize2(char *lineptr, const char *delim);
 void execmd(char **argv);
-int main(int argc, char **argv);
+int main();
 

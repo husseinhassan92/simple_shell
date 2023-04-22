@@ -2,14 +2,13 @@
 #include <stdlib.h>
 #include "main.h"
 
-int main(int argc, char **argv)
+int main()
 {
 	char *prompt = "cisfun$ ";
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t nread;
-	char **token;
-	int i;
+	pid_t pid;
 
 	while (1)
 	{
@@ -19,7 +18,7 @@ int main(int argc, char **argv)
 			break;
 		if (strcmp(line, "exit\n") == 0)
 			break;
-		pid_t pid = fork();
+		pid = fork();
 		if (pid == 0)
 		{
 			execmd(tokenize(line));
