@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 
 int main()
@@ -12,7 +10,8 @@ int main()
 
 	while (1)
 	{
-		printf("%s", prompt);
+		if (isatty(STDIN_FILENO))
+			printf("%s", prompt);
 		nread = getline(&line, &len, stdin);
 		if (nread == -1)
 			break;
