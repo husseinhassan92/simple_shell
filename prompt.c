@@ -1,9 +1,8 @@
 #include "main.h"
 
-int main()
+int main(void)
 {
-	char *prompt = "cisfun$ ";
-	char *line = NULL;
+	char *prompt = "cisfun$ ", *line = NULL;
 	size_t len = 0;
 	ssize_t nread;
 	pid_t pid;
