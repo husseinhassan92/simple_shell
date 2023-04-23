@@ -13,6 +13,8 @@
 char **tokenize(char *line);
 void execmd(char **argv);
 char *path(char *cmd);
+void print_env();
+int _strcmp(const char *s1, const char *s2);
 int main();
 
 #endif

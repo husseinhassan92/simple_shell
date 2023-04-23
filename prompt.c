@@ -15,8 +15,13 @@ int main()
 		nread = getline(&line, &len, stdin);
 		if (nread == -1)
 			break;
-		if (strcmp(line, "exit\n") == 0)
+		if (_strcmp(line, "exit\n") == 0)
 			break;
+		if (_strcmp(line, "env\n") == 0)
+		{
+			print_env();
+			continue;
+		}
 		pid = fork();
 		if (pid == 0)
 		{
