@@ -1,4 +1,8 @@
 #include "main.h"
+/**
+ * main - repeatedly prompts user and executes user's cmds if applicable
+ * Return: 0 on success
+ */
 
 int main(void)
 {

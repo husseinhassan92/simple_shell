@@ -1,4 +1,9 @@
 # include "main.h"
+/**
+ * path - return the path of the command
+ * @cmd: the command from the user
+ * Return: string of the path
+ */
 
 
 char *path(char *cmd)
@@ -7,27 +12,27 @@ char *path(char *cmd)
 	int cmd_len, pth_len;
 	struct stat buff;
 
-	if(stat(cmd, &buff) == 0)
+	if (stat(cmd, &buff) == 0)
 		return (cmd);
-	else
+	if (stat(cmd, &buff) != 0)
 	{
 		pth = getenv("PATH");
 
-		if(pth != NULL)
+		if (pth != NULL)
 		{
-			c_pth = strdup(pth);
-			cmd_len = strlen(cmd);
+			c_pth = _strdup(pth);
+			cmd_len = _strlen(cmd);
 			p_tok = strtok(c_pth, ":");
-			while(p_tok != NULL)
+			while (p_tok != NULL)
 			{
-				pth_len = strlen(p_tok);
+				pth_len = _strlen(p_tok);
 				f_pth = malloc(cmd_len + pth_len + 2);
 				if (f_pth == NULL)
-					return(NULL);
-				strcpy(f_pth, p_tok);
-				strcat(f_pth, "/");
-				strcat(f_pth, cmd);
-				strcat(f_pth, "\0");
+					return (NULL);
+				_strcpy(f_pth, p_tok);
+				_strcat(f_pth, "/");
+				_strcat(f_pth, cmd);
+				_strcat(f_pth, "\0");
 				if (stat(f_pth, &buff) == 0)
 				{
 					free(c_pth);

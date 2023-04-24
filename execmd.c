@@ -1,4 +1,8 @@
 #include "main.h"
+/**
+ * execmd - excutue the user command
+ * @argv: pointer to command string
+ */
 
 void execmd(char **argv)
 {

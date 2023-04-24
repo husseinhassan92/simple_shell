@@ -14,8 +14,12 @@ char **tokenize(char *line);
 void execmd(char **argv);
 char *path(char *cmd);
 void print_env();
+int _strlen(char *s);
 int _strcmp(const char *s1, const char *s2);
-int main();
+char *_strdup(char *str);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, const char *src);
+int main(void);
 
 #endif
 
