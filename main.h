@@ -10,6 +10,8 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
+extern char **environ;
+
 char **tokenize(char *line);
 void execmd(char **argv);
 char *path(char *cmd);
