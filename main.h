@@ -15,7 +15,7 @@ extern char **environ;
 char **tokenize(char *line);
 void execmd(char **argv);
 char *path(char *cmd);
-void print_env();
+void print_env(void);
 int _strlen(char *s);
 int _strcmp(const char *s1, const char *s2);
 char *_strdup(char *str);
